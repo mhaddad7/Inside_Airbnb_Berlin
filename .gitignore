@@ -216,3 +216,19 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Data files
+*.csv
+
+# ---- Tableau ----
+# Extracts and temp files (regenerable, can be large)
+*.hyper
+*.tde
+
+# Tableau temp/backup files
+~*.twb
+~*.twbx
+*.twbr
+*.twbx.tmp
+
+# Keep: *.twb (workbook) and *.tds (data source) — version-control these
