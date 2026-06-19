@@ -13,7 +13,7 @@
 
 > This project explores the Berlin Airbnb market using the Inside Airbnb dataset.
 > Two independent marketing-focused analyses were conducted in parallel, covering
-> suspected violations of Berlin's 90-day short-term rental cap and [Angle 2].
+> suspected violations of Berlin's 90-day short-term rental cap and listing attribute optimization for demand generation.
 
 ---
 
@@ -34,22 +34,24 @@
 inside-airbnb-berlin/
 │
 ├── Dashboards
-│   └──Inside_AirBnB.twbx
-|
+│   ├── olderVersions
+│   |   └── Inside_AirBnB_Version01_Sicheungskopie.twbx
+|   └── Inside_AirBnB_Version02.twbx
 ├── Data
 │   └── [raw data files]            <- not pushed to GitHub
 │
 ├── Notebooks
 │   ├── 01_Selma_overview.ipynb
-│   └── 02_Selma_90dayslimit.ipynb
-|   └── berlin_airbnb_market_overview
-│   └──booking_demand_analysis
+│   ├── 02_Selma_90dayslimit.ipynb
+|   ├── 03_Mohamad_berlin_airbnb_market_overview.ipynb
+│   └── 04_Mohamad_booking_demand_analysis.ipynb
 │
 ├── Plotting_output
-│   ├── berlin_airbnb_market_overview
-│   └── booking_demand_analysis
+│   └── MohamadsPlots
+│       ├── berlin_airbnb_market_overview
+│       └── booking_demand_analysis
 │   └── SelmasPlots
-│       └── 00_overviews
+│       ├── 00_overviews
 │       └── 01_occupancy
 │
 └── README.md
@@ -74,8 +76,8 @@ the Berlin Airbnb market from a distinct marketing perspective.
 | **Focus** | Regulatory compliance analysis |
 | **Methods** | Cumulative distribution (ECDF), proportional analysis, box plots (log scale), geospatial mapping  |
 | **Key tools** | Python · pandas · statsmodels · matplotlib · seaborn · Tableau Public |
-| **Notebook** | 02_Selma_90dayslimit (\Notebooks) |
-| **Tableau** | Inside_AirBnB.twbx (\Dashboards\) |
+| **Notebook** | [`02_Selma_90dayslimit.ipynb`](Notebooks/02_Selma_90dayslimit.ipynb) |
+| **Tableau** | [`Inside_AirBnB.twbx`](Dashboards/Inside_AirBnB.twbx) |
 
 **Key findings:**
 - Of all active listings, 24 % are booked beyond Berlin's 90-day limit, with entire homes run by multi-listing hosts forming the strongest violation suspects.
@@ -84,23 +86,25 @@ the Berlin Airbnb market from a distinct marketing perspective.
 
 ---
 
-### Angle 2 — [Analysis Title]
-**Analyst:** [Colleague's Name]
+### Angle 2 — Listing Attribute Optimization for Demand Generation
+**Analyst:** Mohamad Haddad
 
-> [2–3 sentences describing what this angle investigates, the marketing
-> question it answers, and why it matters from a business perspective.]
+> Which controllable listing and host attributes most significantly drive booking
+> demand in Berlin's Airbnb market? This analysis uses `reviews_per_month` as a
+> booking proxy to quantify the relative impact of host behavior, listing features,
+> and pricing — producing a ranked priority stack of actionable demand levers.
 
 | | |
 |---|---|
-| **Marketing focus** | [e.g. Demand generation / Pricing strategy / Brand equity] |
-| **Methods** | [e.g. Method 1, Method 2, Method 3] |
-| **Key tools** | [Tools used] |
-| **Notebook** | [`[notebook-name].ipynb`]([path/to/notebook]) |
+| **Marketing focus** | Demand generation |
+| **Methods** | OLS Regression |
+| **Key tools** | Python · Pandas · statsmodels · scipy · json · matplotlib · seaborn · Tableau Public |
+| **Notebook** | [`04_Mohamad_booking_demand_analysis.ipynb`](Notebooks/04_Mohamad_booking_demand_analysis.ipynb) |
 
 **Key findings:**
-- [Placeholder finding 1]
-- [Placeholder finding 2]
-- [Placeholder finding 3]
+- Host response time is the single strongest demand driver — ~4–5× more influential than any other predictor — with each tier improvement associated with ~18.5% more bookings/month
+- Enabling instant booking yields ~12.5% more bookings/month at zero cost, making it the highest-return frictionreduction action a host can take
+- The Berlin market is price-inelastic: a 10% price increase reduces demand by only ~1%, meaning behavioral levers far outperform price cuts as demand generation tools
 
 ---
 
@@ -109,4 +113,4 @@ the Berlin Airbnb market from a distinct marketing perspective.
 | Analyst | Analysis Angle | Focus Area |
 |---|---|---|
 | Selma Esders | Berlin's 90-day short-term rental cap | Regulatory compliance analysis |
-| [Colleague's Name] | [Angle 2 Title] | [Marketing focus] |
+| Mohamad Haddad | Listing Attribute Optimization for Demand Generation | Demand generation |
